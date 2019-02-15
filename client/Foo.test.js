@@ -13,7 +13,7 @@ it('should be selectable by class "foo"', function () {
   expect(shallow(<Foo />).is('.foo')).toBe(true);
 });
 
-it('should mount in a full DOM', function () {
+xit('should mount in a full DOM', function () {
   expect(mount(<Foo />).find('.foo').length).toBe(1);
 });
 
