@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "jest --config=jest.config.js",
-    "build-dev": "webpack --mode=development"
+    "build-dev": "webpack --mode=development",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
   },
   "dependencies": {
     "react": "^16.8.2",
@@ -24,6 +25,7 @@
     "enzyme-adapter-react-16": "^1.9.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "jest": "^24.1.0",
+    "react-hot-loader": "^4.6.5",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
