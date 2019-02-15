@@ -6,7 +6,7 @@ class Foo extends React.Component {
   }
   render() {
     return (
-      <div className="foo">Hello Timber</div>
+      <div className="foo">Hello Foo</div>
     )
   }
 }
