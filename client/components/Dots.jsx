@@ -7,7 +7,7 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 library.add(faEllipsisH);
 import BoxButton from './BoxButton'
 
-class Dots extends React.Component {
+export default class Dots extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -21,4 +21,3 @@ class Dots extends React.Component {
     )
   }
 }
-export default Dots;

@@ -29,35 +29,6 @@ class App extends React.Component {
   }
 
 
-  // OLD STATIC DATA GENERATION 
-  // fetchData(callback) {
-  //   var songs = generateSongs(3);
-  //   var users = generateUsers(9);
-  //   var playlists = generatePlaylists(3);
-
-  //   // compute a user lookup table by username
-  //   const userlookup = users.reduce((userlookup, user) => {
-  //     userlookup[user.username] = user;
-  //     return userlookup;
-  //   }, {});
-
-  //   //put the users on the songs
-  //   songs = songs.map(song => {
-  //     return { ...song, user: this.state.userlookup[song.username]  }
-  //   })
-
-  //   // put the users on the playlists
-  //   playlists = playlists.map(playlist => {
-  //     return { ...playlist, user: this.state.userlookup[playlist.username]  }
-  //   });
-
-  //   this.setState({
-  //     songs: songs,
-  //     users: users,
-  //     playlists: playlists,
-  //   }, callback)
-  // }
-
   // return a promise that resolves once our express server returns the users
   getUsersPromise() {
     return fetch("/api/users")
