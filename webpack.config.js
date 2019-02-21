@@ -1,5 +1,6 @@
 
 module.exports = {
+  context: __dirname,
   entry: './client/index.js',
   module: {
     rules: [
