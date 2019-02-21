@@ -15,7 +15,8 @@
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "server": "nodemon --experimental-modules server/index.mjs",
     "createDB": "mysql -u root  < db/schema.sql",
-    "seedDB": "node --experimental-modules db/seed.mjs"
+    "seedDB": "node --experimental-modules db/seed.mjs",
+    "elastic": "npm run-script build && npm run-script server"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
