@@ -20,7 +20,7 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/dist`,
-    publicPath: '/',
+    publicPath: '/app',
     filename: 'bundle.js',
   },
   plugins: [
