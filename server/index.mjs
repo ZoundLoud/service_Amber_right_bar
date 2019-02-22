@@ -1,6 +1,6 @@
 import express from 'express';
 import mysql from 'mysql';
-
+import path from 'path';
 import cors from 'cors';
 
 const connection = mysql.createConnection({
@@ -12,7 +12,12 @@ const connection = mysql.createConnection({
 
 const app = express();
 app.use(express.json());
-app.use(express.static('dist'));
+// app.use(express.static('dist'));
+// app.use('/song/:songID');
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/dist')));
+app.use('/song/:songID', express.static(path.join(__dirname, '/dist')));
+
 app.use(cors());
 // static server here for dist files in production...
 
