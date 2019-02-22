@@ -4,9 +4,10 @@ import mysql from 'mysql';
 import cors from 'cors';
 
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'zound',
+  host: 'rightstuff.cvojhsq84htk.us-east-2.rds.amazonaws.com',
+  user: 'rightstuff',
+  password: 'servicepony',
+  database: 'rightbar',
 });
 
 const app = express();
@@ -50,7 +51,7 @@ app.get('/api/playlists', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
