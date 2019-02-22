@@ -16,7 +16,8 @@ class App extends React.Component {
       songs: [],
       users: [],
       playlists: [],
-      currentlySelected: { num_likes: undefined }
+      currentlySelected: { num_likes: undefined },
+      songPlaying: 1
     }
 
     this.selectSong = this.selectSong.bind(this)
@@ -36,8 +37,13 @@ class App extends React.Component {
 
   // and for the songs
   getSongsPromise() {
-    return fetch("/api/songs")
-      .then(response => response.json())
+    const id = window.location.pathname
+    console.log(id);
+    return fetch(`/api${id}`)
+      .then(response => {
+        return response.json()
+      }
+      )
   }
 
   // and for the playlists
@@ -64,7 +70,7 @@ class App extends React.Component {
         }, {});
 
         // console.log(userlookup)
-
+        console.log('songs', songs)
         //put the users on the songs
         songs = songs.map(song => {
           return { ...song, user: userlookup[song.username] }
@@ -80,6 +86,7 @@ class App extends React.Component {
           users: users,
           songs: songs,
           playlists: playlists,
+          songPlaying: window.location.pathname,
 
           // set the currently selected to the first one in the list
           currentlySelected: songs[0]
@@ -92,6 +99,8 @@ class App extends React.Component {
   }
 
   render() {
+    // console.log('hello world');
+    // console.log(window.location.pathname)
     return (
       <div className='app'>
         {/* app is pretty simple, just a track list, a playlist, and our user likes */}
