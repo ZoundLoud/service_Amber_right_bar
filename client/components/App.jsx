@@ -31,15 +31,15 @@ class App extends React.Component {
 
   // return a promise that resolves once our express server returns the users
   getUsersPromise() {
-    return fetch("/api/users")
+    const id = window.location.pathname
+    return fetch(`http://rightbar-env.hbtddaitbq.us-east-2.elasticbeanstalk.com/api${id}users`)
       .then(response => response.json())
   }
 
   // and for the songs
   getSongsPromise() {
     const id = window.location.pathname
-    console.log(id);
-    return fetch(`/api${id}`)
+    return fetch(`http://rightbar-env.hbtddaitbq.us-east-2.elasticbeanstalk.com/api${id}relatedtracks`)
       .then(response => {
         return response.json()
       }
@@ -48,7 +48,8 @@ class App extends React.Component {
 
   // and for the playlists
   getPlaylistsPromise() {
-    return fetch("/api/playlists")
+    const id = window.location.pathname
+    return fetch(`http://rightbar-env.hbtddaitbq.us-east-2.elasticbeanstalk.com/api${id}playlists`)
       .then(response => response.json())
   }
 
